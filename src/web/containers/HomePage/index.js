@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import Helmet from 'react-helmet';
 
+import messages from './messages';
 import { createStructuredSelector } from 'reselect';
 
 import {
@@ -24,6 +25,7 @@ import {
 import { changeUsername } from './actions';
 import { loadRepos } from '../App/actions';
 
+import { FormattedMessage } from 'react-intl';
 import RepoListItem from 'containers/RepoListItem';
 import Button from 'components/Button';
 import H2 from 'components/H2';
