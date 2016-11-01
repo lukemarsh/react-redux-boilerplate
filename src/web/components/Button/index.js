@@ -10,7 +10,7 @@ import React, { PropTypes, Children } from 'react';
 
 import styles from './styles.css';
 
-function Button(props) {
+const Button = (props) => {
   const className = props.className ? props.className : styles.button;
 
   // Render an anchor tag
@@ -34,7 +34,7 @@ function Button(props) {
       {button}
     </div>
   );
-}
+};
 
 Button.propTypes = {
   className: PropTypes.string,

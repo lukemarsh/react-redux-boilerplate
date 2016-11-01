@@ -68,13 +68,4 @@ describe('<RepoListItem />', () => {
     );
     expect(renderedComponent.text().indexOf(item.open_issues_count)).toBeGreaterThan(1);
   });
-
-  it('should render the IssueIcon', () => {
-    const renderedComponent = mount(
-      <IntlProvider locale="en">
-        <RepoListItem item={item} />
-      </IntlProvider>
-    );
-    expect(renderedComponent.find('svg').length).toEqual(1);
-  });
 });

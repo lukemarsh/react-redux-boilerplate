@@ -18,7 +18,7 @@ import LoadingIndicator from 'components/LoadingIndicator';
 describe('<HomePage />', () => {
   it('should render the loading indicator when its loading', () => {
     const renderedComponent = shallow(
-      <HomePage loading />
+      <HomePage {...{ loading: true }} />
     );
     expect(renderedComponent.contains(<List component={LoadingIndicator} />)).toEqual(true);
   });
@@ -37,20 +37,6 @@ describe('<HomePage />', () => {
         .text()
         .indexOf('Something went wrong, please try again!')
       ).toBeGreaterThan(-1);
-  });
-
-  it('should render fetch the repos on mount if a username exists', () => {
-    const submitSpy = expect.createSpy();
-    mount(
-      <IntlProvider locale="en">
-        <HomePage
-          username="Not Empty"
-          onChangeUsername={() => {}}
-          onSubmitForm={submitSpy}
-        />
-      </IntlProvider>
-    );
-    expect(submitSpy).toHaveBeenCalled();
   });
 
   it('should render the repositories if loading was successful', () => {
@@ -73,26 +59,6 @@ describe('<HomePage />', () => {
     expect(renderedComponent.contains(<List items={repos} component={RepoListItem} />)).toEqual(true);
   });
 
-  it('should link to /features', () => {
-    const openRouteSpy = expect.createSpy();
-
-    // Spy on the openRoute method of the HomePage
-    const openRoute = (dest) => {
-      if (dest === '/features') {
-        openRouteSpy();
-      }
-    };
-
-    const renderedComponent = mount(
-      <IntlProvider locale="en">
-        <HomePage loading changeRoute={openRoute} />
-      </IntlProvider>
-    );
-    const button = renderedComponent.find('button');
-    button.simulate('click');
-    expect(openRouteSpy).toHaveBeenCalled();
-  });
-
   describe('mapDispatchToProps', () => {
     describe('onChangeUsername', () => {
       it('should be injected', () => {
@@ -108,22 +74,6 @@ describe('<HomePage />', () => {
         result.onChangeUsername({ target: { value: username } });
         expect(dispatch).toHaveBeenCalledWith(changeUsername(username));
       });
-    });
-  });
-
-  describe('changeRoute', () => {
-    it('should be injected', () => {
-      const dispatch = expect.createSpy();
-      const result = mapDispatchToProps(dispatch);
-      expect(result.changeRoute).toExist();
-    });
-
-    it('should dispatch push when called', () => {
-      const dispatch = expect.createSpy();
-      const result = mapDispatchToProps(dispatch);
-      const route = '/';
-      result.changeRoute(route);
-      expect(dispatch).toHaveBeenCalledWith(push(route));
     });
   });
 

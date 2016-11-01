@@ -29,34 +29,8 @@ export default function createRoutes(store) {
 
         const renderRoute = loadModule(cb);
 
-        importModules.then((component) => {
-          renderRoute(component);
-        });
-
-        importModules.catch(errorLoading);
-      },
-    }, {
-      path: '/features',
-      name: 'features',
-      getComponent(nextState, cb) {
-        System.import('containers/FeaturePage')
-          .then(loadModule(cb))
-          .catch(errorLoading);
-      },
-    }, {
-      path: '/about',
-      name: 'about',
-      getComponent(nextState, cb) {
-        const importModules = Promise.all([
-          System.import('containers/About/reducer'),
-          System.import('containers/About/sagas'),
-          System.import('containers/About'),
-        ]);
-
-        const renderRoute = loadModule(cb);
-
         importModules.then(([reducer, sagas, component]) => {
-          injectReducer('about', reducer.default);
+          injectReducer('home', reducer.default);
           injectSagas(sagas.default);
           renderRoute(component);
         });

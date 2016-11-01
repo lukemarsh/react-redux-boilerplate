@@ -14,15 +14,14 @@ import styles from './styles.css';
 import messages from './messages';
 import Toggle from 'components/Toggle';
 
-export class LocaleToggle extends React.Component { // eslint-disable-line
-  render() {
-    return (
-      <div className={styles.localeToggle}>
-        <Toggle values={appLocales} messages={messages} onToggle={this.props.onLocaleToggle} />
-      </div>
-    );
-  }
-}
+const LocaleToggle = (props) => {
+  const { onLocaleToggle } = props;
+  return (
+    <div className={styles.localeToggle}>
+      <Toggle values={appLocales} messages={messages} onToggle={onLocaleToggle} />
+    </div>
+  );
+};
 
 LocaleToggle.propTypes = {
   onLocaleToggle: React.PropTypes.func,
