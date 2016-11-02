@@ -5,10 +5,7 @@
  */
 
 import React from 'react';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 
-import { selectCurrentUser } from 'containers/App/selectors';
 import ListItem from 'components/ListItem';
 import A from 'components/A';
 
@@ -55,7 +52,4 @@ RepoListItem.propTypes = {
   currentUser: React.PropTypes.string,
 };
 
-export default connect(createSelector(
-  selectCurrentUser(),
-  (currentUser) => ({ currentUser })
-))(RepoListItem);
+export default RepoListItem;

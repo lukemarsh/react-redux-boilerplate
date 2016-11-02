@@ -15,16 +15,17 @@ import {
   selectRepos,
   selectLoading,
   selectError,
+  selectCurrentUser
 } from 'containers/App/selectors';
 
 import {
-  selectUsername,
+  selectUsername
 } from './selectors';
 
 import { changeUsername } from './actions';
 import { loadRepos } from '../App/actions';
 
-import RepoListItem from 'containers/RepoListItem';
+import RepoListItem from 'components/RepoListItem';
 import List from 'components/List';
 import ListItem from 'components/ListItem';
 import LoadingIndicator from 'components/LoadingIndicator';
@@ -32,7 +33,7 @@ import LoadingIndicator from 'components/LoadingIndicator';
 import styles from './styles.css';
 
 export const HomePage = (props) => {
-  const { username, loading, error, repos, onSubmitForm, onChangeUsername } = props;
+  const { username, loading, error, repos, currentUser, onSubmitForm, onChangeUsername } = props;
 
   let mainContent = null;
 
@@ -49,7 +50,7 @@ export const HomePage = (props) => {
 
   // If we're not loading, don't have an error and there are repos, show the repos
   } else if (repos !== false) {
-    mainContent = (<List items={repos} component={RepoListItem} />);
+    mainContent = (<List items={repos} currentUser={currentUser} component={RepoListItem} />);
   }
 
   return (
@@ -106,6 +107,10 @@ HomePage.propTypes = {
     React.PropTypes.array,
     React.PropTypes.bool,
   ]),
+  currentUser: React.PropTypes.oneOfType([
+    React.PropTypes.bool,
+    React.PropTypes.string
+  ]),
   onSubmitForm: React.PropTypes.func,
   username: React.PropTypes.string,
   onChangeUsername: React.PropTypes.func,
@@ -128,6 +133,7 @@ const mapStateToProps = createStructuredSelector({
   username: selectUsername(),
   loading: selectLoading(),
   error: selectError(),
+  currentUser: selectCurrentUser()
 });
 
 // Wrap the component to inject dispatch and state into it

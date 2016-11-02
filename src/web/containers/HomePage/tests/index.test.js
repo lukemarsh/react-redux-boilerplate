@@ -9,7 +9,7 @@ import React from 'react';
 import { HomePage, mapDispatchToProps } from '../index';
 import { changeUsername } from '../actions';
 import { loadRepos } from '../../App/actions';
-import RepoListItem from 'containers/RepoListItem';
+import RepoListItem from 'components/RepoListItem';
 import List from 'components/List';
 import LoadingIndicator from 'components/LoadingIndicator';
 
@@ -36,6 +36,7 @@ describe('<HomePage />', () => {
   });
 
   it('should render the repositories if loading was successful', () => {
+    const currentUser = 'lukemarsh';
     const repos = [{
       owner: {
         login: 'mxstbr',
@@ -49,10 +50,11 @@ describe('<HomePage />', () => {
       <HomePage
         repos={repos}
         error={false}
+        currentUser={currentUser}
       />
     );
 
-    expect(renderedComponent.contains(<List items={repos} component={RepoListItem} />)).toEqual(true);
+    expect(renderedComponent.contains(<List currentUser={currentUser} items={repos} component={RepoListItem} />)).toEqual(true);
   });
 
   describe('mapDispatchToProps', () => {
