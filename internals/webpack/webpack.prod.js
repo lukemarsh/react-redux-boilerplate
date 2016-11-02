@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 
-module.exports = require('./webpack.base.babel')({
+module.exports = require('./webpack.base')({
   // In production, we skip all hot-reloading stuff
   entry: [
     path.join(process.cwd(), 'app/app.js'),

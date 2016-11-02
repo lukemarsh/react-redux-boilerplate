@@ -3,15 +3,8 @@
  *
  * This contains all the text for the NotFoundPage component.
  */
-import { defineMessages } from 'react-intl';
 
-export default defineMessages({
-  header: {
-    id: 'boilerplate.containers.NotFoundPage.header',
-    defaultMessage: 'Page not found.',
-  },
-  homeButton: {
-    id: 'boilerplate.containers.NotFoundPage.home',
-    defaultMessage: 'Home',
-  },
-});
+export default {
+  header: 'Page not found.',
+  homeButton: 'Home'
+};

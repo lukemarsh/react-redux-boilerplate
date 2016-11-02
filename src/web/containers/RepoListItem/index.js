@@ -8,7 +8,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { FormattedNumber } from 'react-intl';
 import { selectCurrentUser } from 'containers/App/selectors';
 import ListItem from 'components/ListItem';
 import A from 'components/A';
@@ -40,7 +39,7 @@ export const RepoListItem = (props) => { // eslint-disable-line react/prefer-sta
         href={`${item.html_url}/issues`}
         target="_blank"
       >
-        <FormattedNumber value={item.open_issues_count} />
+        <p>{item.open_issues_count}</p>
       </A>
     </div>
   );

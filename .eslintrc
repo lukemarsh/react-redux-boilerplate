@@ -28,7 +28,7 @@
         "as-needed"
       ],
       "comma-dangle": [
-        2,
+        0,
         "always-multiline"
       ],
       "import/imports-first": 0,
@@ -71,7 +71,7 @@
     "settings": {
       "import/resolver": {
         "webpack": {
-          "config": "./internals/webpack/webpack.test.babel.js"
+          "config": "./internals/webpack/webpack.test.js"
         }
       }
     }

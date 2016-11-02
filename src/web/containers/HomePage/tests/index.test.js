@@ -6,11 +6,9 @@ import expect from 'expect';
 import { shallow, mount } from 'enzyme';
 import React from 'react';
 
-import { IntlProvider } from 'react-intl';
 import { HomePage, mapDispatchToProps } from '../index';
 import { changeUsername } from '../actions';
 import { loadRepos } from '../../App/actions';
-import { push } from 'react-router-redux';
 import RepoListItem from 'containers/RepoListItem';
 import List from 'components/List';
 import LoadingIndicator from 'components/LoadingIndicator';
@@ -25,12 +23,10 @@ describe('<HomePage />', () => {
 
   it('should render an error if loading failed', () => {
     const renderedComponent = mount(
-      <IntlProvider locale="en">
-        <HomePage
-          loading={false}
-          error={{ message: 'Loading failed!' }}
-        />
-      </IntlProvider>
+      <HomePage
+        loading={false}
+        error={{ message: 'Loading failed!' }}
+      />
     );
     expect(
       renderedComponent

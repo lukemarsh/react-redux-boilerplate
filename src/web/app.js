@@ -25,9 +25,6 @@ import FontFaceObserver from 'fontfaceobserver';
 import { useScroll } from 'react-router-scroll';
 import configureStore from './store';
 
-// Import Language Provider
-import LanguageProvider from 'containers/LanguageProvider';
-
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)
 import styles from 'containers/App/styles.css';
@@ -39,9 +36,6 @@ openSansObserver.load().then(() => {
 }, () => {
   document.body.classList.remove(styles.fontLoaded);
 });
-
-// Import i18n messages
-import { translationMessages } from './i18n';
 
 // Create redux store with history
 // this uses the singleton browserHistory provided by react-router
@@ -66,50 +60,24 @@ const rootRoute = {
   childRoutes: createRoutes(store),
 };
 
-const render = (messages) => {
+const render = () => {
   ReactDOM.render(
     <Provider store={store}>
-      <LanguageProvider messages={messages}>
-        <Router
-          history={history}
-          routes={rootRoute}
-          render={
-            // Scroll to top when going to a new page, imitating default browser
-            // behaviour
-            applyRouterMiddleware(useScroll())
-          }
-        />
-      </LanguageProvider>
+      <Router
+        history={history}
+        routes={rootRoute}
+        render={
+          // Scroll to top when going to a new page, imitating default browser
+          // behaviour
+          applyRouterMiddleware(useScroll())
+        }
+      />
     </Provider>,
     document.getElementById('app')
   );
 };
 
-// Hot reloadable translation json files
-if (module.hot) {
-  // modules.hot.accept does not accept dynamic dependencies,
-  // have to be constants at compile-time
-  module.hot.accept('./i18n', () => {
-    render(translationMessages);
-  });
-}
-
-// Chunked polyfill for browsers without Intl support
-if (!window.Intl) {
-  (new Promise((resolve) => {
-    resolve(System.import('intl'));
-  }))
-    .then(() => Promise.all([
-      System.import('intl/locale-data/jsonp/en.js'),
-      System.import('intl/locale-data/jsonp/de.js'),
-    ]))
-    .then(() => render(translationMessages))
-    .catch((err) => {
-      throw err;
-    });
-} else {
-  render(translationMessages);
-}
+render();
 
 // Install ServiceWorker and AppCache in the end since
 // it's not most important operation and if main code fails,

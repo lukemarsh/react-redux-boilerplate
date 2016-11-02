@@ -2,27 +2,17 @@ import React from 'react';
 import messages from './messages';
 import A from 'components/A';
 import styles from './styles.css';
-import { FormattedMessage } from 'react-intl';
-import LocaleToggle from 'containers/LocaleToggle';
 
 const Footer = () => (
   <footer className={styles.footer}>
     <section>
       <p>
-        <FormattedMessage {...messages.licenseMessage} />
+        {messages.licenseMessage}
       </p>
     </section>
     <section>
-      <LocaleToggle />
-    </section>
-    <section>
       <p>
-        <FormattedMessage
-          {...messages.authorMessage}
-          values={{
-            author: <A href="https://twitter.com/mxstbr">Max Stoiber</A>,
-          }}
-        />
+        {messages.authorMessage}
       </p>
     </section>
   </footer>

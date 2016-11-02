@@ -4,9 +4,8 @@
  * This is the first thing users see of our App, at the '/' route
  */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import Helmet from 'react-helmet';
 
 import messages from './messages';
@@ -25,7 +24,6 @@ import {
 import { changeUsername } from './actions';
 import { loadRepos } from '../App/actions';
 
-import { FormattedMessage } from 'react-intl';
 import RepoListItem from 'containers/RepoListItem';
 import List from 'components/List';
 import ListItem from 'components/ListItem';
@@ -65,21 +63,21 @@ export const HomePage = (props) => {
       <div>
         <section className={`${styles.textSection} ${styles.centered}`}>
           <h2>
-            <FormattedMessage {...messages.startProjectHeader} />
+           {messages.startProjectHeader}
           </h2>
           <p>
-            <FormattedMessage {...messages.startProjectMessage} />
+            {messages.startProjectMessage}
           </p>
         </section>
         <section className={styles.textSection}>
           <h2>
-            <FormattedMessage {...messages.trymeHeader} />
+            {messages.trymeHeader}
           </h2>
           <form className={styles.usernameForm} onSubmit={onSubmitForm}>
             <label htmlFor="username">
-              <FormattedMessage {...messages.trymeMessage} />
+              {messages.trymeMessage}
               <span className={styles.atPrefix}>
-                <FormattedMessage {...messages.trymeAtPrefix} />
+                {messages.trymeAtPrefix}
               </span>
               <input
                 id="username"

@@ -9,20 +9,17 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 
 import messages from './messages';
-import { FormattedMessage } from 'react-intl';
 import Button from 'components/Button';
 
 export const NotFound = (props) => (
   <article>
-    <h1>
-      <FormattedMessage {...messages.header} />
-    </h1>
+    <h1>{messages.header}</h1>
     <Button
       handleRoute={function redirect() {
         props.dispatch(push('/'));
       }}
     >
-      <FormattedMessage {...messages.homeButton} />
+    {messages.homeButton}
     </Button>
   </article>
 );
