@@ -58,7 +58,7 @@ export const HomePage = (props) => {
       <Helmet
         title="Home Page"
         meta={[
-          { name: 'description', content: 'A React.js Boilerplate application homepage' },
+          { name: 'description', content: 'A React Boilerplate application homepage' },
         ]}
       />
       <div>
