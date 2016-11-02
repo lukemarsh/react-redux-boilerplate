@@ -4,7 +4,6 @@ import React from 'react';
 
 import messages from '../messages';
 import Footer from '../index';
-import A from 'components/A';
 
 describe('<Footer />', () => {
   it('should render the copyright notice', () => {

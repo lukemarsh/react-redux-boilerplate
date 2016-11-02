@@ -81,7 +81,7 @@ module.exports = (options) => ({
     })
   ],
   resolve: {
-    modules: ['src/web', 'node_modules'],
+    modules: [path.resolve(process.cwd(), 'src/web'), 'node_modules'],
     extensions: [
       '',
       '.js',

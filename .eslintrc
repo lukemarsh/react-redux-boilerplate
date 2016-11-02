@@ -31,6 +31,9 @@
         0,
         "always-multiline"
       ],
+      "no-underscore-dangle": [
+        0
+      ],
       "import/imports-first": 0,
       "import/newline-after-import": 0,
       "import/no-extraneous-dependencies": 0,
