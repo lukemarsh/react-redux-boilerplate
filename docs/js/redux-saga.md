@@ -71,7 +71,3 @@ getComponent(nextState, cb) {
 ```
 
 Now add as many sagas to your `sagas.js` file as you want!
-
----
-
-_Don't like this feature? [Click here](remove.md)_

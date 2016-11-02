@@ -72,7 +72,3 @@ export {
   selectMyState,
 };
 ```
-
----
-
-_Don't like this feature? [Click here](remove.md)_

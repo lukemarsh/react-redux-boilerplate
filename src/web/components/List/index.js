@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './styles.css';
 
-function List(props) {
+const List = (props) => {
   const ComponentToRender = props.component;
   let content = (<div></div>);
 
@@ -23,7 +23,7 @@ function List(props) {
       </ul>
     </div>
   );
-}
+};
 
 List.propTypes = {
   component: React.PropTypes.func.isRequired,
