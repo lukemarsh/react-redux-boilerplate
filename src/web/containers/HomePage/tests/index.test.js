@@ -7,11 +7,11 @@ import { shallow, mount } from 'enzyme';
 import React from 'react';
 
 import { HomePage, mapDispatchToProps } from '../index';
-import { changeUsername } from '../actions';
-import { loadRepos } from '../../App/actions';
-import RepoListItem from 'components/RepoListItem';
-import List from 'components/List';
-import LoadingIndicator from 'components/LoadingIndicator';
+import { changeUsername } from 'core/HomePage/actions';
+import { loadRepos } from 'core/App/actions';
+import RepoListItem from 'web/components/RepoListItem';
+import List from 'web/components/List';
+import LoadingIndicator from 'web/components/LoadingIndicator';
 
 describe('<HomePage />', () => {
   it('should render the loading indicator when its loading', () => {

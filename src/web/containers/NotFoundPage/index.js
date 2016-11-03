@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 
 import messages from './messages';
-import Button from 'components/Button';
+import Button from 'web/components/Button';
 
 export const NotFound = (props) => (
   <article>

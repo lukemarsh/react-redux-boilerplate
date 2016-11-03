@@ -8,7 +8,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 
-import messages from './messages';
+import messages from 'core/HomePage/messages';
 import { createStructuredSelector } from 'reselect';
 
 import {
@@ -16,19 +16,19 @@ import {
   selectLoading,
   selectError,
   selectCurrentUser
-} from 'containers/App/selectors';
+} from 'core/App/selectors';
 
 import {
   selectUsername
-} from './selectors';
+} from 'core/HomePage/selectors';
 
-import { changeUsername } from './actions';
-import { loadRepos } from '../App/actions';
+import { changeUsername } from 'core/HomePage/actions';
+import { loadRepos } from 'core/App/actions';
 
-import RepoListItem from 'components/RepoListItem';
-import List from 'components/List';
-import ListItem from 'components/ListItem';
-import LoadingIndicator from 'components/LoadingIndicator';
+import RepoListItem from 'web/components/RepoListItem';
+import List from 'web/components/List';
+import ListItem from 'web/components/ListItem';
+import LoadingIndicator from 'web/components/LoadingIndicator';
 
 import styles from './styles.css';
 

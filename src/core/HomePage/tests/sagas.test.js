@@ -9,11 +9,11 @@ import { LOCATION_CHANGE } from 'react-router-redux';
 
 import { getRepos, getReposWatcher, githubData } from '../sagas';
 
-import { LOAD_REPOS } from '../../../containers/App/constants';
-import { reposLoaded, repoLoadingError } from '../../../containers/App/actions';
+import { LOAD_REPOS } from 'core/App/constants';
+import { reposLoaded, repoLoadingError } from 'core/App/actions';
 
-import request from '../../../utils/request';
-import { selectUsername } from '../../../containers/HomePage/selectors';
+import request from 'web/utils/request';
+import { selectUsername } from 'core/HomePage/selectors';
 
 const username = 'lukemarsh';
 
