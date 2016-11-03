@@ -39,12 +39,12 @@ describe('<HomePage />', () => {
     const currentUser = 'lukemarsh';
     const repos = [{
       owner: {
-        login: 'mxstbr',
+        login: 'lukemarsh',
       },
-      html_url: 'https://github.com/mxstbr/react-boilerplate',
-      name: 'react-boilerplate',
+      html_url: 'https://github.com/lukemarsh/react-redux-boilerplate',
+      name: 'react-redux-boilerplate',
       open_issues_count: 20,
-      full_name: 'mxstbr/react-boilerplate',
+      full_name: 'lukemarsh/react-redux-boilerplate',
     }];
     const renderedComponent = shallow(
       <HomePage
@@ -68,7 +68,7 @@ describe('<HomePage />', () => {
       it('should dispatch changeUsername when called', () => {
         const dispatch = expect.createSpy();
         const result = mapDispatchToProps(dispatch);
-        const username = 'mxstbr';
+        const username = 'lukemarsh';
         result.onChangeUsername({ target: { value: username } });
         expect(dispatch).toHaveBeenCalledWith(changeUsername(username));
       });

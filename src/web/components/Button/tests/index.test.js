@@ -9,7 +9,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 
 const handleRoute = () => {};
-const href = 'http://mxstbr.com';
+const href = 'http://lukemarsh.co.uk';
 const children = (<h1>Test</h1>);
 const renderComponent = (props = {}) => shallow(
   <Button href={href} {...props}>

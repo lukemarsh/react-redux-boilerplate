@@ -146,6 +146,6 @@ in the `package.json` with `babel server`!
 
 ## Have another question?
 
-Submit an [issue](https://github.com/mxstbr/react-boilerplate/issues),
-hop onto the [Gitter channel](https://gitter.im/mxstbr/react-boilerplate)
-or contact Max direct on [twitter](https://twitter.com/mxstbr)!
+Submit an [issue](https://github.com/lukemarsh/react-redux-boilerplate/issues),
+hop onto the [Gitter channel](https://gitter.im/lukemarsh/react-redux-boilerplate)
+or contact Luke direct on [twitter](https://twitter.com/lukeamarsh)!

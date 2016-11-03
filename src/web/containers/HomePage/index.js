@@ -84,7 +84,7 @@ export const HomePage = (props) => {
                 id="username"
                 className={styles.input}
                 type="text"
-                placeholder="mxstbr"
+                placeholder="lukemarsh"
                 value={username}
                 onChange={onChangeUsername}
               />

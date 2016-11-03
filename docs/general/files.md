@@ -29,5 +29,5 @@ they do.
 This is where the bulk of the tooling configuration lives, broken out into
 recognisable units of work.
 
-Feel free to change anything you like but don't be afraid to [ask upfront](https://gitter.im/mxstbr/react-boilerplate)
+Feel free to change anything you like but don't be afraid to [ask upfront](https://gitter.im/lukemarsh/react-redux-boilerplate)
 whether you should: build systems are easy to break!
