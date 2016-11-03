@@ -2,6 +2,8 @@
 
 [![Join the chat at https://gitter.im/react-redux-boilerplate/Lobby](https://badges.gitter.im/react-redux-boilerplate/Lobby.svg)](https://gitter.im/react-redux-boilerplate/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+[![Build Status](https://travis-ci.org/lukemarsh/react-redux-boilerplate.svg?branch=master)](https://travis-ci.org/lukemarsh/react-redux-boilerplate)
+
 1. Clone this repo using `git clone --depth=1 https://github.com/lukemarsh/react-redux-boilerplate.git`
 1. Run `npm install` to install dependencies
 1. Run `npm start` to see the example app at `http://localhost:3000`.
