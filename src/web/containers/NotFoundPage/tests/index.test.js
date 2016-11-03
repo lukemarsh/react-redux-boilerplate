@@ -7,7 +7,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 
 import { NotFound } from '../index';
-import Button from 'components/Button';
+import Button from 'web/components/Button';
 
 describe('<NotFound />', () => {
   it('should render the Page Not Found text', () => {

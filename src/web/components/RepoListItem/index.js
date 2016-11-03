@@ -6,8 +6,8 @@
 
 import React from 'react';
 
-import ListItem from 'components/ListItem';
-import A from 'components/A';
+import ListItem from 'web/components/ListItem';
+import A from 'web/components/A';
 
 import styles from './styles.css';
 
