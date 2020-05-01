@@ -28,7 +28,9 @@
     "test:watch": "npm run test -- --auto-watch --no-single-run",
     "test:firefox": "npm run test -- --browsers Firefox",
     "test:safari": "npm run test -- --browsers Safari",
-    "test:ie": "npm run test -- --browsers IE"
+    "test:ie": "npm run test -- --browsers IE",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "lint-staged": {
     "*.js": "lint:eslint",
@@ -55,7 +57,8 @@
     "redux-saga": "0.11.1",
     "reselect": "2.5.4",
     "sanitize.css": "4.1.0",
-    "whatwg-fetch": "1.0.0"
+    "whatwg-fetch": "1.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-cli": "6.14.0",
@@ -122,5 +125,6 @@
     "webpack": "2.1.0-beta.22",
     "webpack-dev-middleware": "1.8.0",
     "webpack-hot-middleware": "2.12.2"
-  }
+  },
+  "snyk": true
 }
